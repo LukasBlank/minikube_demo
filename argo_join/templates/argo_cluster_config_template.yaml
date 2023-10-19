@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ${CLUSTERNAME_S1}
+  namespace: default
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    platform: googlecloud
+type: Opaque
+data:
+  name: ${CLUSTERNAMEB64_S1}
+  server: ${ENDPOINTB64_S1}
+  namespaces: ""
+  config: ${CONFIGB64_S1}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ${CLUSTERNAME_S2}
+  namespace: default
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    platform: googlecloud
+type: Opaque
+data:
+  name: ${CLUSTERNAMEB64_S2}
+  server: ${ENDPOINTB64_S2}
+  namespaces: ""
+  config: ${CONFIGB64_S2}
